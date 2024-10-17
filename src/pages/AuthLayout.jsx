@@ -1,43 +1,25 @@
-import { useEffect } from "react";
+
 import { Outlet } from "react-router-dom";
-import axios from "axios";
+
 const AuthLayout = () => {
-  useEffect(() => {
-    const data = async () => {
-      const res = await axios.post(
-        "https://backend-service-two.vercel.app/app/v1/signin",
-        {
-          username: "v23",
-          password: "12345678",
-        },
-        { withCredentials: true }
-      );
-
-      // console.log(res)
-    };
-
-    data();
-
-    return () => data();
-  }, []);
-
-  async function getNotes() {
-    const res = await axios.get(
-      `https://backend-service-two.vercel.app/app/v1/seenotes`
-    );
-    console.log(res);
-  }
-
   return (
-    <div className="h-screen max-w-7xl p-text capitalize">
-      <div>hello world</div>
-      <button
-        onClick={(e) => {
-          e.preventDefault();
-          getNotes();
-        }}
-      >click me</button>
-      <Outlet />
+    <div className="auth-layout px-5">
+      <div className="right hidden  h-screen relative   md:w-[45%] lg:w-[77.33%] md:flex md:flex-col md:gap-6 ">
+        <div className="relative w-full overflow-auto text-center text-text-white-500">
+          <p className="p-text ">Hey there</p>
+          <h1 className="h1-bold">Welcome to the backend Service</h1>
+          <p className="h2-small">Please login to use services</p>
+        </div>
+        <div className=" h-[80%] md:h-[75%] w-full relative overflow-hidden rounded-2xl bg-red">
+          <video className="h-full w-full relative object-fill 
+          " autoPlay muted loop>
+            <source src="https://cdn.pixabay.com/video/2024/03/23/205286-926737056_large.mp4" />
+          </video>
+        </div>
+      </div>
+      <div className="relative w-full md:w-[55%] lg:w-1/2">
+        <Outlet />
+      </div>
     </div>
   );
 };
