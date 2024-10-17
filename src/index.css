@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+
+  .dark {
+    @apply bg-black;
+  }
+
+  /* Text utils */
+
+  .h1-bold {
+    @apply text-4xl font-[900]   font-prime;
+  }
+
+  .h1-semibold {
+    @apply text-4xl font-[700]  font-prime;
+  }
+
+  .h2-semibold {
+    @apply text-2xl font-[700] font-sans;
+  }
+  .h2-small {
+    @apply text-2xl font-[600] font-prime;
+  }
+
+  .p-text {
+    @apply text-[18px] font-medium font-prime;
+  }
+
+  /* helping be  */
+
+  
+}
