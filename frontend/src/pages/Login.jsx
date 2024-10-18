@@ -28,7 +28,7 @@ const Login = () => {
       { withCredentials: true }
     );
     console.log(res);
-    // console.log(formData);
+    console.log(formData);
     // navigate("/app/v1")
   };
 
